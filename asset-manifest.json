@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "./css/main.7c54fe73.chunk.css",
+    "main.js": "./js/main.ebd60654.chunk.js",
+    "main.js.map": "./js/main.ebd60654.chunk.js.map",
+    "runtime-main.js": "./js/runtime-main.99f4a9f9.js",
+    "runtime-main.js.map": "./js/runtime-main.99f4a9f9.js.map",
+    "static/js/2.7a5dcc08.chunk.js": "./js/2.7a5dcc08.chunk.js",
+    "static/js/2.7a5dcc08.chunk.js.map": "./js/2.7a5dcc08.chunk.js.map",
+    "static/js/3.106417bf.chunk.js": "./js/3.106417bf.chunk.js",
+    "static/js/3.106417bf.chunk.js.map": "./js/3.106417bf.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.7c54fe73.chunk.css.map": "./css/main.7c54fe73.chunk.css.map",
+    "static/js/2.7a5dcc08.chunk.js.LICENSE.txt": "./js/2.7a5dcc08.chunk.js.LICENSE.txt",
+    "static/media/1.12b8c8f7.png": "./media/1.12b8c8f7.png",
+    "static/media/reset.css": "./media/HussarBoldWebEdition-xq5O.0e1244e4.woff"
+  },
+  "entrypoints": [
+    "js/runtime-main.99f4a9f9.js",
+    "js/2.7a5dcc08.chunk.js",
+    "css/main.7c54fe73.chunk.css",
+    "js/main.ebd60654.chunk.js"
+  ]
+}
