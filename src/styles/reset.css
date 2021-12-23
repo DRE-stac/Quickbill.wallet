@@ -162,10 +162,55 @@ html {
   background-color: "#4C4C4C";
 }
 
+form {
+  background-color: rgb(65, 65, 65);
+  padding: 1em;
+  border-radius: 10px;
+  border: 2px solid #64ee85;
+}
+div {
+  padding-top: 1em;
+}
+input,
+textarea {
+  min-width: 450px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  outline: none;
+  background-color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+select {
+  min-width: 450px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  outline: none;
+  background-color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+input:focus,
+textarea:focus {
+  border: 2px solid #64ee85;
+  color: #c5cdd3;
+}
+textarea {
+  min-height: 25px;
+  resize: vertical;
+}
+.submit {
+  color: #000000;
+}
+
 div {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   -o-user-select: none;
+}
+
+a {
+  color: #64ee85;
 }

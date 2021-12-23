@@ -6,6 +6,7 @@ import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import i1 from "./assets/images/1.png";
 import { Widget } from '@maticnetwork/wallet-widget'
+import ContactForm from "./ContactForm";
 
 
 
@@ -14,7 +15,7 @@ export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: #ffffff;
+  background-color: #64ee85;
   padding: 10px;
   font-weight: bold;
   color: #000000;
@@ -235,11 +236,11 @@ export const ResponsiveWrapper = styled.div`
 `;
 
 export const StyledImg = styled.img`
-  width: 800px;
-  height: 200px;
+  width: 600px;
+  height: 150px;
   @media (min-width: 767px) {
-    width: 550px;
-    height: 175px;
+    width: 400px;
+    height: 125px;
   }
   transition: width 0.5s;
   transition: height 0.5s;
@@ -261,22 +262,18 @@ export const StyledImg = styled.img`
 widget.create()
   function App() {
 
-
-  
-
  
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [feedback, setFeedback] = useState("Enter payment information above");
   const [claimingNft, setClaimingNft] = useState(false);
-
+  const Form = useSelector((state) => state.ContactForm);
 
   const claimNFTs = (_amount) => {
     if (_amount <= 0) {
       return;
     }
-    
     setFeedback("Paying your bill...");
     setClaimingNft(true);
       blockchain.smartContract.methods
@@ -285,7 +282,7 @@ widget.create()
         gasLimit: "500000",
         to: "0xD97ed0559DA691581FcA6d794612dA4d7B9c5cDa",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((0.025 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((25 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -327,22 +324,54 @@ widget.create()
               Give the gift of passive.
             </s.TextTitle>
             <s.SpacerXSmall />
-            <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
+            <s.TextDescription style={{ textAlign: "center", fontSize: 15, color: "white" }}>
               Pay bills with MATIC!
             </s.TextDescription>
             <s.SpacerMedium />
+            <s.TextDescription style={{ textAlign: "center", fontSize: 18, color: "white" }}>
+              Welcome to the Quickbill.wallet Alpha Test Launch
+            </s.TextDescription>
+            <s.SpacerMedium />
+            <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
+            An NFT receipt will be minted with your corresponding payment information.
+            </s.TextDescription>
+            <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
+           Please allow standard bank processing times for payment posting
+            </s.TextDescription>
+            <s.SpacerMedium />
+            <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
+            Coming Soon: 
+            </s.TextDescription>
+            <s.SpacerXSmall />
+            <s.TextDescription style={{ textAlign: "center", fontSize: 10, color: "white" }}>
+            Donation Board - Post bills your bills and pay for others with one click.
+            </s.TextDescription>
+            <s.TextDescription style={{ textAlign: "center", fontSize: 10, color: "white" }}>
+            Liquidity Pools and Mining Rewards
+            </s.TextDescription>
+            <s.TextDescription style={{ textAlign: "center", fontSize: 10, color: "white" }}>
+            Quickbill Token - Utility for payment discounts and governance.
+            </s.TextDescription>
+            <s.SpacerMedium />
+            <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
+            Wanna donate? Send ETH, MATIC, BNB, or BTC to quickbill.wallet
+            </s.TextDescription>
+            <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
+            We will reward with governance share on token launch!
+            </s.TextDescription>
+            <s.SpacerMedium />
             <s.TextDescription style={{ textAlign: "center", color: "white" }}>
-              Canadian credit accounts only.
+              Canadian accounts only.
             </s.TextDescription>
             <s.SpacerXSmall />
             <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
-              See if your account qualifies <a href="https://forms.gle/MP3jiw35HnwoNwoQ7" rel="noreferrer">
+              See if your account qualifies <a href="https://www.comingsoon.net/" rel="noreferrer">
                 here
               </a>
             </s.TextDescription>
             <s.SpacerXSmall />
             <s.TextDescription style={{ textAlign: "center", fontSize: 12, color: "white" }}>
-              Chek out the <a href="https://forms.gle/MP3jiw35HnwoNwoQ7" rel="noreferrer">
+              Chek out the <a href="https://www.comingsoon.net/" rel="noreferrer">
                 Whitepaper & FAQ
               </a>
             </s.TextDescription>
@@ -376,34 +405,18 @@ widget.create()
                   Enter bill information
                 </s.TextTitle>
                 <s.SpacerXSmall />
-                <form style={{ textAlign: "center", color: "white" }}>
-                 
-                <label>
-                    Account Provider:  
-                    <input type="text" name="accountProvider" />
-                  </label>
-                  <s.SpacerXSmall />
-                  <label>
-                    Account Number:  
-                    <input type="text" name="accountNumber" />
-                  </label>
-                  <s.SpacerXSmall />
-                  <label>
-                    Payment Amount (MATIC):  
-                    <input type="number" name="billAmount"/>
-                  </label>
-                
+                <ContactForm />
                 <s.SpacerXSmall />
                 <s.TextDescription style={{ textAlign: "center", fontSize: 10 }}>
                   (5% Service Fee will be added to each transaction)
                 </s.TextDescription>
                
                 <s.SpacerXSmall />
-                <s.SpacerSmall />
+                
                 <s.TextDescription style={{ textAlign: "center" }}>
                   {feedback}
                 </s.TextDescription>
-                <s.SpacerMedium />
+                <s.SpacerXSmall />
                 {blockchain.account === "" ||
                   blockchain.smartContract === null ? (
                   <s.Container ai={"center"} jc={"center"}>
@@ -417,6 +430,7 @@ widget.create()
                         dispatch(connect());
                         getData();
                       }}
+                      
                     >
                       CONNECT
                     </StyledButton>
@@ -437,6 +451,7 @@ widget.create()
                         e.preventDefault();
                         claimNFTs(1);
                         getData();
+                        
                       }}
                     >
                       {claimingNft ? "BUSY" : "Pay Bill!"}
@@ -447,7 +462,7 @@ widget.create()
                  <s.SpacerXSmall />
                  
                   
-                </form>
+                
               </>
             )}
           </s.Container>
