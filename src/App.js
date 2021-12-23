@@ -266,7 +266,7 @@ widget.create()
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
-  const [feedback, setFeedback] = useState("Enter payment information above");
+  const [feedback, setFeedback] = useState("Enter payment information above, then connect and pay below");
   const [claimingNft, setClaimingNft] = useState(false);
   const Form = useSelector((state) => state.ContactForm);
 
@@ -403,7 +403,13 @@ widget.create()
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
                   Enter bill information
-                </s.TextTitle>
+                </s.TextTitle> 
+                <s.TextDescription style={{ textAlign: "center", fontSize: 10 }}>
+                  PLEASE NOTE NO BILLS WILL BE PAID DURING FUNDRAISING
+                </s.TextDescription>
+                <s.TextDescription style={{ textAlign: "center", fontSize: 10 }}>
+                 NFTs will be awarded for donation
+                </s.TextDescription>
                 <s.SpacerXSmall />
                 <ContactForm />
                 <s.SpacerXSmall />
