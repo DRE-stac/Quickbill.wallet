@@ -276,11 +276,11 @@ widget.create()
     }
     setFeedback("Paying your bill...");
     setClaimingNft(true);
-      blockchain.smartContract.methods
-      .purchase(_amount)
+      blockchain.smartContractno.methods
+      .mint(_amount)
       .send({
         gasLimit: "500000",
-        to: "0xD97ed0559DA691581FcA6d794612dA4d7B9c5cDa",
+        to: "0x6F8385f6D8571ed903c5510732Feab7C0b429D62",
         from: blockchain.account,
         value: blockchain.web3.utils.toWei((25 * _amount).toString(), "ether"),
       })
