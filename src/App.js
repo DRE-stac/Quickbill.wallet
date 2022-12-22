@@ -5,7 +5,7 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import i1 from "./assets/images/1.png";
-import { Widget } from '@maticnetwork/wallet-widget'
+
 import ContactForm from "./ContactForm";
 
 
@@ -248,18 +248,7 @@ export const StyledImg = styled.img`
 
 
 
-  const widget = new Widget({
-    target: '',
-    appName: 'DrePay',
-    autoShowTime: 5,
-    position: 'center',
-    height: 700,
-    width: 600,
-    overlay: false,
-    network: 'mainnet',
-    closable: true,
-  });
-widget.create()
+
   function App() {
 
  
