@@ -246,19 +246,6 @@ export const StyledImg = styled.img`
 `;
 
 
-
-  const widget = new Widget({
-    target: '',
-    appName: 'DrePay',
-    autoShowTime: 5,
-    position: 'center',
-    height: 700,
-    width: 600,
-    overlay: false,
-    network: 'mainnet',
-    closable: true,
-  });
-widget.create()
   function App() {
 
 
